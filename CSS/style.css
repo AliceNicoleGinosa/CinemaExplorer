@@ -1,0 +1,346 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  background-color: #1f282f;
+  font-family: "Gabarito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+.hero {
+  background: url("/images/hero-image.jpg") no-repeat center;
+  background-size: cover;
+  padding-top: 50px;
+  height: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.navigation-menu {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 80px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 60px;
+  color: #fff;
+  position: absolute;
+  top: -30px;
+  left: 20px;
+}
+
+.main-subtitle {
+  text-align: center;
+  margin-top: 90px;
+  font-size: 40px;
+  color: #fff;
+}
+
+/* CSS BOTTONI FILTRO MOVIES OR SERIES */
+
+.link--menu {
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: #12161ab8;
+  padding: 7px 50px;
+  color: whitesmoke;
+  transition: transform 0.35s;
+  text-decoration: none;
+}
+
+.link--menu:hover {
+  color: #fff;
+  background-color: transparent;
+  transform: scale(1.5);
+}
+
+/* CSS SEZIONI FILTRI PER GENERE, SEARCH E YEAR */
+
+/* .wrapper-filter {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+} */
+
+.wrapper-search {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.input-wrapper {
+  width: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.input-year {
+  width: auto;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+}
+
+.input-wrapper::placeholder,
+.input-year::placeholder {
+  color: #12161a;
+  font-weight: bold;
+}
+
+.button-input,
+.button-year {
+  padding: 10px 5px;
+  background-color: #12161a;
+  color: #fff;
+  font-weight: bolder;
+  margin-left: 15px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.button-input:hover,
+.button-year:hover {
+  color: #8cacd3;
+  transform: scale(1.1);
+  border: 1px solid #8cacd3;
+}
+
+#select,
+#select-series {
+  width: 200px;
+  background-color: #fff; /* Colore di sfondo */
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: center;
+  color: #12161a;
+  font-weight: bold;
+}
+
+/* SEZIONE CARD FILM E SERIE*/
+
+.watch--list {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  z-index: 10;
+  /* margin: 30px; */
+
+  width: 100%;
+}
+
+.wrapper {
+  width: 200px;
+  height: 300px;
+  margin-top: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.35s;
+  box-shadow: 0px 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.wrapper:hover {
+  transform: scale(1.1);
+  border: 2px solid #8cacd3;
+}
+.image--wrapper {
+  height: 300px;
+  width: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-wrapper:hover {
+  background-color: whitesmoke;
+}
+.wrapper--title {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.wrapper--title:hover {
+  transform: scale(1.1);
+}
+
+/* CSS MODALE */
+
+.modal {
+  z-index: 10000;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+  border: 1px solid #8cacd3;
+  background-color: #1f282fee;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-height: 700px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow-y: auto;
+}
+
+.internalEl-modal {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.image-modal {
+  width: 50%;
+  margin-left: 30px;
+  box-shadow: 0px 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.modal-button {
+  position: absolute;
+  border-radius: 10px;
+  top: 13px;
+  right: 10px;
+  margin-right: 10px;
+  color: #8cacd3;
+  /* background-color: #8cacd3; */
+  padding: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  background-color: transparent;
+  /* border: 2px solid #8cacd3; */
+  color: #fff;
+}
+
+.title-modal {
+  font-size: 40px;
+  color: #fff;
+}
+
+.modal-description {
+  color: #fff;
+  font-size: 15px;
+  line-height: 30px;
+  padding: 10px;
+}
+.modal-rate {
+  color: #fff;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 10px;
+  align-self: flex-start;
+}
+
+.messageNotFound {
+  font-size: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+/*INDICAZIONI PER MOBILE */
+
+@media only screen and (max-width: 768px) {
+  .wrapper-search {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #select,
+  #select-series {
+    width: 300px;
+  }
+
+  .input-year {
+    width: auto;
+  }
+  .button-year {
+    width: 125px;
+  }
+
+  .modal {
+    width: 100vw;
+    height: 90vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+
+    /* flex-direction: space-between; */
+    justify-content: space-between;
+
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    overflow-y: visible;
+  }
+
+  .image-modal {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width: 35%;
+  }
+
+  .internalEl-modal {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: start;
+
+    width: 50%;
+  }
+
+  .title-modal {
+    font-size: 18px;
+    line-height: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .modal-description {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .modal-rate {
+    font-size: 12px;
+    line-height: 5px;
+    padding: 10px;
+  }
+}
